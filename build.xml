@@ -47,8 +47,8 @@
     <!--Copy static HTML and JSP files to work dir -->
     <!--<copy tod	ir="${work.home}">
       <fileset dir="${web.home}"/>
-    </copy>
-  </target>-->
+    </copy>-->
+  </target>
 
   <target name="compile" depends="prepare"
           description="Compile Java sources and copy to WEB-INF/classes dir">
