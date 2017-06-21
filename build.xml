@@ -1,9 +1,8 @@
 <project name="My Project" default="help" basedir=".">
-<target name="copy"
-          description="Copy New Web Page">
-	<exec executable="sudo" inputstring="root">
-		<arg line="-S"/>
-	</exec>
+<condition property="rootTasksEnabled">
+    <equals arg1="ec2-user" arg2="root" />
+</condition>
+<target name="copy" description="Copy New Web Page" if="rootTasksEnabled">
 	<copy file="index.html" todir="/var/www/html"/>
 </target>
 </project>
