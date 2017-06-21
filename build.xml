@@ -7,9 +7,8 @@
 <target name="if-not-root" if="rootTasksEnabled">
     <echo>Changing to root</echo>
 
-    <exec executable="sudo">
-        <arg value="-u" />
-		<arg value="${ant.home}/bin/ant -buildfile ${ant.file} ${targetToRunAsOtherUser}" />
+    <exec executable="sudo su">
+        <arg value="${ant.home}/bin/ant -buildfile ${ant.file} ${targetToRunAsOtherUser}" />
         <arg value="root" />
     </exec>
 </target>
