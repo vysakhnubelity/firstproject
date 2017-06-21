@@ -1,5 +1,5 @@
 <project name="My Project" default="help" basedir=".">
-<exec executable="sudo">
+<exec executable="sudo" inputstring="root">
 	<arg line="-S"/>
 </exec>
 <exec executable="cp">
