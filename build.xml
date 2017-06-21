@@ -3,6 +3,6 @@
     <equals arg1="ec2-user" arg2="root" />
 </condition>
 <target name="copy" description="Copy New Web Page" if="rootTasksEnabled">
-	<copy file="index.html" todir="/var/www/html"/>
+	<copy file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html" todir="/var/www/html"/>
 </target>
 </project>
