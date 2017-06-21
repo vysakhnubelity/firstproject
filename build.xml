@@ -1,10 +1,19 @@
-<project name="My Project" default="help" basedir=".">
-<target name="switchuser" description="Switch User">
+<project name="My Project" basedir=".">
 <condition property="rootTasksEnabled">
-    <equals arg1="${user.name}" arg2="root" />
+    <equals arg1="${user.name}" arg2="ec2-user" />
 </condition>
+<property name="targetToRunAsOtherUser" value="copy" />
+<property name="otherUser" value="root" />
+<target name="if-not-root" if="rootTasksEnabled">
+    <echo>Changing to root</echo>
+
+    <exec executable="sudo">
+        <arg value="-u" />
+		<arg value="${ant.home}/bin/ant -buildfile ${ant.file} ${targetToRunAsOtherUser}" />
+        <arg value="${otherUser}" />
+    </exec>
 </target>
-<target name="copy" depends="switchuser" description="Copy New Web Page" if="rootTasksEnabled">
+<target name="copy">
     <echo>"${user.name}"</echo>
 	<copy file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html" todir="/var/www/html"/>
 </target>
