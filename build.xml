@@ -1,6 +1,6 @@
 <project name="My Project" default="help" basedir=".">
 <exec executable="sudo">
-	<arg line="su"/>
+	<arg line="visudo"/>
 </exec>
 <exec executable="cp">
     <arg line="-R index.html /var/www/html"/>
