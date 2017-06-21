@@ -5,7 +5,7 @@
 <target name="if-not-root" if="rootTasksEnabled">
     <echo>Changing to root</echo>
 
-    <exec executable="sudo -t">
+    <exec executable="sudo">
         <arg value="cp /var/lib/go-agent/pipelines/Test-Pipeline/index.html /var/www/html/" />
     </exec>
 </target>
