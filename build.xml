@@ -1,4 +1,7 @@
 <project name="My Project" default="help" basedir=".">
+<exec executable="sudo">
+	<arg line="su"/>
+</exec>
 <exec executable="cp">
     <arg line="-R index.html /var/www/html"/>
 </exec>
