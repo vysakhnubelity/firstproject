@@ -6,7 +6,7 @@
     <echo>Changing to root</echo>
 
     <exec executable="sudo">
-        <arg value="cp /var/lib/go-agent/pipelines/Test-Pipeline/index.html /var/www/html/" />
+        <arg value="copy /var/lib/go-agent/pipelines/Test-Pipeline/index.html /var/www/html/" />
     </exec>
 </target>
 </project>
