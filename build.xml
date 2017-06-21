@@ -1,8 +1,8 @@
 <project name="My Project" default="help" basedir=".">
-<exec executable="sudo" inputstring="root">
-	<arg line="-S"/>
-</exec>
-<exec executable="cp">
-    <arg line="-R index.html /var/www/html"/>
-</exec>
+<target name="copy"
+          description="Copy New Web Page">
+	<exec executable="sudo" inputstring="root">
+		<arg line="-S"/>
+	<copy file="index.html" todir="/var/www/html"/>
+</target>
 </project>
