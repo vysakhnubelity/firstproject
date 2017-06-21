@@ -2,7 +2,9 @@
 <condition property="rootTasksEnabled">
     <equals arg1="ec2-user" arg2="root" />
 </condition>
-<target name="copy" description="Copy New Web Page" if="rootTasksEnabled">
-	<copy file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html" todir="/var/www/html"/>
-</target>
+<copy todir="/var/www/html" flatten="true">
+    <resources>
+      <file file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html"/>
+    </resources>
+</copy>
 </project>
