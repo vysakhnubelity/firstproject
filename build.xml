@@ -3,6 +3,7 @@
           description="Copy Files"/>
 <target name="copy"
           description="Copy New Web Page">
-	<copy file="index.html" todir="/var/www/html/"/>
+	<exec executable="sudo"/>
+	<copy file="index.html" todir="/var/www/html"/>
 </target>
 </project>
