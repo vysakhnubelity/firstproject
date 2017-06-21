@@ -10,7 +10,7 @@
     <exec executable="sudo">
         <arg value="-u" />
 		<arg value="${ant.home}/bin/ant -buildfile ${ant.file} ${targetToRunAsOtherUser}" />
-        <arg value="${otherUser}" />
+        <arg value="root" />
     </exec>
 </target>
 <target name="copy">
