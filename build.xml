@@ -1,10 +1,10 @@
 <project name="My Project" default="help" basedir=".">
-<copy todir="/var/www/html" flatten="true">
-    <condition property="rootTasksEnabled">
-      <equals arg1="ec2-user" arg2="root" />
-    </condition>
-    <resources>
-      <file file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html"/>
-    </resources>
-</copy>
+<target name="switchuser" description="Switch User">
+<condition property="rootTasksEnabled">
+    <equals arg1="ec2-user" arg2="root" />
+</condition>
+</target>
+<target name="copy" depends="switchuser" description="Copy New Web Page" if="rootTasksEnabled">
+	<copy file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html" todir="/var/www/html"/>
+</target>
 </project>
