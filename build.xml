@@ -1,6 +1,6 @@
 <project name="My Project" basedir=".">
 <condition property="rootTasksEnabled">
-    <equals arg1="${user.name}" arg2="ec2-user" />
+    <equals arg1="${user.name}" arg2="go" />
 </condition>
 <property name="targetToRunAsOtherUser" value="copy" />
 <property name="otherUser" value="root" />
