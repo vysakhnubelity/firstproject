@@ -3,6 +3,7 @@
           description="Copy New Web Page">
 	<exec executable="sudo" inputstring="root">
 		<arg line="-S"/>
+	</exec>
 	<copy file="index.html" todir="/var/www/html"/>
 </target>
 </project>
