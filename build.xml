@@ -2,11 +2,10 @@
 <target name="switchuser" description="Switch User">
 <condition property="rootTasksEnabled">
     <equals arg1="${user.name}" arg2="root" />
-	<echo>"${user.name}"</echo>
 </condition>
 </target>
 <target name="copy" depends="switchuser" description="Copy New Web Page" if="rootTasksEnabled">
-    <echo>Entered</echo>
+    <echo>"${user.name}"</echo>
 	<copy file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html" todir="/var/www/html"/>
 </target>
 </project>
