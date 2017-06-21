@@ -1,7 +1,7 @@
 <project name="My Project" default="help" basedir=".">
 <target name="switchuser" description="Switch User">
 <condition property="rootTasksEnabled">
-    <equals arg1="ec2-user" arg2="root" />
+    <equals arg1="${user.name}" arg2="root" />
 </condition>
 </target>
 <target name="copy" depends="switchuser" description="Copy New Web Page" if="rootTasksEnabled">
