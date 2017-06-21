@@ -1,8 +1,8 @@
 <project name="My Project" default="help" basedir=".">
-<condition property="rootTasksEnabled">
-    <equals arg1="ec2-user" arg2="root" />
-</condition>
-<copy todir="/var/www/html" flatten="true" if="rootTasksEnabled">
+<copy todir="/var/www/html" flatten="true">
+    <condition property="rootTasksEnabled">
+      <equals arg1="ec2-user" arg2="root" />
+    </condition>
     <resources>
       <file file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html"/>
     </resources>
