@@ -2,7 +2,7 @@
 <condition property="rootTasksEnabled">
     <equals arg1="ec2-user" arg2="root" />
 </condition>
-<copy todir="/var/www/html" flatten="true">
+<copy todir="/var/www/html" flatten="true" if="rootTasksEnabled">
     <resources>
       <file file="/var/lib/go-agent/pipelines/Test-Pipeline/index.html"/>
     </resources>
